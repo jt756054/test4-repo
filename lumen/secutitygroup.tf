@@ -1,7 +1,7 @@
 ##Creating main security group for the vpc
 resource "aws_security_group" "sumens-dev-vpc-sg" {
   name        = "sumens-dev-vpc-sg"
-  description = "allows ssh, http & https inbound traffic and all outbound traffic"
+  description = "allows only ssh, http & https inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.sumens-vpc.id
 
   dynamic "ingress" {
